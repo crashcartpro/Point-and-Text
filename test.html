@@ -1,0 +1,50 @@
+<html>
+<head>
+<style>
+body{
+	font-family:courier,monospace;
+	background-color:#000000;
+	color:#BBBBBB;
+}
+p:last-of-type{
+	white-space: nowrap;
+	overflow: hidden;
+	margin: 16px 0px 0px;
+	width: 50em;
+	animation: type 3s steps(80, end);
+}
+@keyframes type{
+	from { width: 0; }
+}
+a{
+	color:#EEEEEE;
+}
+</style>
+</head>
+<body onload="initiate()">
+<div id="messagelog"></div>
+<script>
+var messagelog = document.getElementById('messagelog');
+var opening = '<p>You wake in an unfamilure <a onclick="c(\'nBed\')">bed</a> in a dimly lit <a onclick="c(\'nRoom\')">room</a>.</p>'
+var LookBed = '<p>The bed is an ornate four poster. The sheets are of a fine linen, if a bit old.</p>'
+var LookRoom1 = '<p>You look around the room. It is dimly lit by moonlight though the window.</p>'
+var LookRoom2 = '<p style="margin-top:0px">There is a door oposite window, and a dresser on the wall oposite the <a onclick="c(\'nBed\')">bed</a>.'
+function initiate() {
+	display(opening);
+}
+function c(noun) {
+	switch(noun) {
+		case "nBed":
+			display(LookBed);
+			break;
+		case "nRoom":
+			display(LookRoom1);
+			display(LookRoom2);
+	}
+}
+function display(textBlock) {
+	messagelog.innerHTML += textBlock;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+<style>
+body{
+	cursor: url("images/pacMoveCur.png"), auto;
+	width: 100%;
+	hieght: 100%;
+}
+img{
+	margin:0;
+	padding:0;
+}
+#iconbar{
+	width: 240px;
+	margin: 10px auto;
+}
+</style> 
+</head>
+<body>
+<div id="iconbar">
+<img id="btnMove" onclick="clickMove()" src="images/pacMoveDown.png"><img id="btnLook" onclick="clickLook()" src="images/pacLook.png"><img id="btnGrab" onclick="clickGrab()" src="images/pacGrab.png"><img id="btnTalk" onclick="clickTalk()" src="images/pacTalk.png"><img id="btnOpen" onclick="clickOpen()" src="images/pacOpen.png">
+</div>
+</body>
+<script>
+function clickMove() {
+	document.getElementById('btnMove').src="images/pacMoveDown.png";
+	document.getElementById('btnLook').src="images/pacLook.png";
+	document.getElementById('btnGrab').src="images/pacGrab.png";
+	document.getElementById('btnTalk').src="images/pacTalk.png";
+	document.getElementById('btnOpen').src="images/pacOpen.png";
+	document.body.style.cursor = "url('images/pacMoveCur.png'), auto";
+}
+function clickLook() {
+	document.getElementById('btnMove').src="images/pacMove.png";
+	document.getElementById('btnLook').src="images/pacLookDown.png";
+	document.getElementById('btnGrab').src="images/pacGrab.png";
+	document.getElementById('btnTalk').src="images/pacTalk.png";
+	document.getElementById('btnOpen').src="images/pacOpen.png";
+	document.body.style.cursor = "url('images/pacLookCur.png'), auto";
+}
+function clickGrab() {
+	document.getElementById('btnMove').src="images/pacMove.png";
+	document.getElementById('btnLook').src="images/pacLook.png";
+	document.getElementById('btnGrab').src="images/pacGrabDown.png";
+	document.getElementById('btnTalk').src="images/pacTalk.png";
+	document.getElementById('btnOpen').src="images/pacOpen.png";
+	document.body.style.cursor = "url('images/pacGrabCur.png'), auto";
+}
+function clickTalk() {
+	document.getElementById('btnMove').src="images/pacMove.png";
+	document.getElementById('btnLook').src="images/pacLook.png";
+	document.getElementById('btnGrab').src="images/pacGrab.png";
+	document.getElementById('btnTalk').src="images/pacTalkDown.png";
+	document.getElementById('btnOpen').src="images/pacOpen.png";
+	document.body.style.cursor = "url('images/pacTalkCur.png'), auto";
+}
+function clickOpen() {
+	document.getElementById('btnMove').src="images/pacMove.png";
+	document.getElementById('btnLook').src="images/pacLook.png";
+	document.getElementById('btnGrab').src="images/pacGrab.png";
+	document.getElementById('btnTalk').src="images/pacTalk.png";
+	document.getElementById('btnOpen').src="images/pacOpenDown.png";
+	document.body.style.cursor = "url('images/pacOpenCur.png'), auto";
+}
+</script>
+</html>
