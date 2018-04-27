@@ -2,65 +2,60 @@
 <head>
 <style>
 body{
-	cursor: url("images/pacMoveCur.png"), auto;
-	width: 100%;
-	hieght: 100%;
+	cursor: url("images/pataLookCur.png"), auto;
+	height: 100%;
 }
 img{
 	margin:0;
 	padding:0;
+	position:absolute;
+	top:0px;
+	width: 48px;
+	height: 48px;
 }
 #iconbar{
 	width: 240px;
 	margin: 10px auto;
+	position: relative;
 }
+#btnLook{left:0px;z-index:2;display:none;}
+#btnGrab{left:48px;z-index:2;}
+#btnOpen{left:96px;z-index:2;}
+#btnTalk{left:144px;z-index:2;}
+#btnMove{left:192px;z-index:2;}
+#btnLookDown{left:0px;z-index:0;}
+#btnGrabDown{left:48px;z-index:0;}
+#btnOpenDown{left:96px;z-index:0;}
+#btnTalkDown{left:144px;z-index:0;}
+#btnMoveDown{left:192px;z-index:0;}
 </style> 
 </head>
 <body>
 <div id="iconbar">
-<img id="btnMove" onclick="clickMove()" src="images/pacMoveDown.png"><img id="btnLook" onclick="clickLook()" src="images/pacLook.png"><img id="btnGrab" onclick="clickGrab()" src="images/pacGrab.png"><img id="btnTalk" onclick="clickTalk()" src="images/pacTalk.png"><img id="btnOpen" onclick="clickOpen()" src="images/pacOpen.png">
+<img id="btnLook" onclick="btnClick(this.id)" src="images/pataLook.png">
+<img id="btnGrab" onclick="btnClick(this.id)" src="images/pataGrab.png">
+<img id="btnOpen" onclick="btnClick(this.id)" src="images/pataOpen.png">
+<img id="btnTalk" onclick="btnClick(this.id)" src="images/pataTalk.png">
+<img id="btnMove" onclick="btnClick(this.id)" src="images/pataMove.png">
+<img id="btnLookDown" onclick="btnClick(this.id)" src="images/pataLookDown.png">
+<img id="btnGrabDown" onclick="btnClick(this.id)" src="images/pataGrabDown.png">
+<img id="btnOpenDown" onclick="btnClick(this.id)" src="images/pataOpenDown.png">
+<img id="btnTalkDown" onclick="btnClick(this.id)" src="images/pataTalkDown.png">
+<img id="btnMoveDown" onclick="btnClick(this.id)" src="images/pataMoveDown.png">
 </div>
 </body>
 <script>
-function clickMove() {
-	document.getElementById('btnMove').src="images/pacMoveDown.png";
-	document.getElementById('btnLook').src="images/pacLook.png";
-	document.getElementById('btnGrab').src="images/pacGrab.png";
-	document.getElementById('btnTalk').src="images/pacTalk.png";
-	document.getElementById('btnOpen').src="images/pacOpen.png";
-	document.body.style.cursor = "url('images/pacMoveCur.png'), auto";
-}
-function clickLook() {
-	document.getElementById('btnMove').src="images/pacMove.png";
-	document.getElementById('btnLook').src="images/pacLookDown.png";
-	document.getElementById('btnGrab').src="images/pacGrab.png";
-	document.getElementById('btnTalk').src="images/pacTalk.png";
-	document.getElementById('btnOpen').src="images/pacOpen.png";
-	document.body.style.cursor = "url('images/pacLookCur.png'), auto";
-}
-function clickGrab() {
-	document.getElementById('btnMove').src="images/pacMove.png";
-	document.getElementById('btnLook').src="images/pacLook.png";
-	document.getElementById('btnGrab').src="images/pacGrabDown.png";
-	document.getElementById('btnTalk').src="images/pacTalk.png";
-	document.getElementById('btnOpen').src="images/pacOpen.png";
-	document.body.style.cursor = "url('images/pacGrabCur.png'), auto";
-}
-function clickTalk() {
-	document.getElementById('btnMove').src="images/pacMove.png";
-	document.getElementById('btnLook').src="images/pacLook.png";
-	document.getElementById('btnGrab').src="images/pacGrab.png";
-	document.getElementById('btnTalk').src="images/pacTalkDown.png";
-	document.getElementById('btnOpen').src="images/pacOpen.png";
-	document.body.style.cursor = "url('images/pacTalkCur.png'), auto";
-}
-function clickOpen() {
-	document.getElementById('btnMove').src="images/pacMove.png";
-	document.getElementById('btnLook').src="images/pacLook.png";
-	document.getElementById('btnGrab').src="images/pacGrab.png";
-	document.getElementById('btnTalk').src="images/pacTalk.png";
-	document.getElementById('btnOpen').src="images/pacOpenDown.png";
-	document.body.style.cursor = "url('images/pacOpenCur.png'), auto";
+function btnClick(btnId) {
+	document.getElementById('btnLook').style.display = (btnId == "btnLook") ? "none" : "initial";
+	document.getElementById('btnGrab').style.display = (btnId == "btnGrab") ? "none" : "initial";
+	document.getElementById('btnOpen').style.display = (btnId == "btnOpen") ? "none" : "initial";
+	document.getElementById('btnTalk').style.display = (btnId == "btnTalk") ? "none" : "initial";
+	document.getElementById('btnMove').style.display = (btnId == "btnMove") ? "none" : "initial";
+	if (btnId == "btnLook") document.body.style.cursor = "url('images/pataLookCur.png'), auto";
+	if (btnId == "btnGrab") document.body.style.cursor = "url('images/pataGrabCur.png'), auto";
+	if (btnId == "btnOpen") document.body.style.cursor = "url('images/pataOpenCur.png'), auto";	
+	if (btnId == "btnTalk") document.body.style.cursor = "url('images/pataTalkCur.png'), auto";
+	if (btnId == "btnMove") document.body.style.cursor = "url('images/pataMoveCur.png'), auto";
 }
 </script>
 </html>

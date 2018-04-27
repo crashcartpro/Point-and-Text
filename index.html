@@ -4,9 +4,19 @@
 </head>
 <body onload="initiate()">
 <div id="iconbar">
-<img class="icons" id="btnLook" onclick="clickLook()" src="images/pataLookDown.png"><img class="icons" id="btnGrab" onclick="clickGrab()" src="images/pataGrab.png"><img class="icons" id="btnOpen" onclick="clickOpen()" src="images/pataOpen.png"><img class="icons" id="btnTalk" onclick="clickTalk()" src="images/pataTalk.png"><img class="icons" id="btnMove" onclick="clickMove()" src="images/pataMove.png"><h3 class="icons" id="title">Point and Text Adventure</h3>
+<img id="btnLook" onclick="btnClick(this.id)" src="images/pataLook.png">
+<img id="btnGrab" onclick="btnClick(this.id)" src="images/pataGrab.png">
+<img id="btnOpen" onclick="btnClick(this.id)" src="images/pataOpen.png">
+<img id="btnTalk" onclick="btnClick(this.id)" src="images/pataTalk.png">
+<img id="btnMove" onclick="btnClick(this.id)" src="images/pataMove.png">
+<img id="btnLookDown" onclick="btnClick(this.id)" src="images/pataLookDown.png">
+<img id="btnGrabDown" onclick="btnClick(this.id)" src="images/pataGrabDown.png">
+<img id="btnOpenDown" onclick="btnClick(this.id)" src="images/pataOpenDown.png">
+<img id="btnTalkDown" onclick="btnClick(this.id)" src="images/pataTalkDown.png">
+<img id="btnMoveDown" onclick="btnClick(this.id)" src="images/pataMoveDown.png">
 </div>
 <div id="messagelog"></div>
 </body>
+<script src="script.js"></script>
 <script src="PaTA.js"></script>
 </html>
