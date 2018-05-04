@@ -1,9 +1,26 @@
 var messagelog = document.getElementById('messagelog');
 var currentCursor = "look";
 var playerLocation = "bed";
+var totalActions = 0;
 
-function initiate() {
+function initiate(begining = "") {
+	console.log("initiate");
+	messagelog.innerHTML = begining;
 	display(opening);
+}
+function resetGame(ending = "") {
+	console.log("resetting game");
+	totalActions = 0;
+	messages = document.getElementsByTagName("P");
+	var i;
+	for (i = 0; i < messages.length; i++) {
+		messages[i].style.animation = "fadeout 2s";
+		messages[i].style.opacity = 0;
+		console.log("fade out " + i);
+	}
+	console.log("display ending");
+	display(ending);
+	setTimeout(function() { initiate(ending); }, 2000);
 }
 function c(noun) {
 	switch(currentCursor) {
@@ -22,6 +39,11 @@ function c(noun) {
 			break;
 		case "move":
 			if (noun == "room") display(moveRoom);
+	}
+	totalActions ++;
+	console.log(totalActions);
+	if (totalActions >= 100) {
+		resetGame(exaustion);
 	}
 }
 function display(textBlock) {
