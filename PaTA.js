@@ -30,15 +30,18 @@ function c(noun) {
 			break;
 		case "grab":
 			if (noun == "room") display(grabRoom);
+			if (noun == "bed") display(grabBed);
 			break;
 		case "open":
 			if (noun == "room") display(openRoom);
+			if (noun == "bed") display(openBed);
 			break;
 		case "talk":
 			if (noun == "room") display(talkRoom);
+			if (noun == "bed") display(talkBed);
 			break;
 		case "move":
-			if (noun == "room") display(moveRoom);
+			movePlayer(noun);
 	}
 	totalActions ++;
 	console.log(totalActions);
@@ -46,6 +49,22 @@ function c(noun) {
 		resetGame(exaustion);
 	}
 }
+function movePlayer(noun) {
+	if (playerLocation == "room") {
+		if (noun == "bed") { display(moveRoomBed); playerLocation = "bed"; }
+		if (noun == "room") { display(moveRoomRoom); playerLocation = "room"; }
+		if (noun == "window") { display(moveRoomWindow); playerLocation = "window"; }
+		if (noun == "dresser") { display(moveRoomDresser); playerLocation = "dresser"; }
+		if (noun == "door") { display(moveRoomDoor); playerLocation = "door"; }
+	} else if (playerLocation == "bed") {
+		if (noun == "bed") { display(moveBedBed); playerLocation = "bed"; }
+		if (noun == "room") { display(moveBedRoom); playerLocation = "room"; }
+		if (noun == "window") { display(moveBedWindow); playerLocation = "window"; }
+		if (noun == "dresser") { display(moveBedDresser); playerLocation = "dresser"; }
+		if (noun == "door") { display(moveBedDoor); playerLocation = "door"; }
+	}
+}
+
 function display(textBlock) {
 	messagelog.innerHTML += textBlock;
 	messagelog.scrollTop = messagelog.scrollHeight;
