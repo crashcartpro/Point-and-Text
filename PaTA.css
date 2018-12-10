@@ -50,6 +50,7 @@ img{
 	border-right-style: solid;
 	border-bottom-style: solid;
 	border-left-style: solid;
+	user-select: none;
 }
 div::-webkit-scrollbar {
 	background-color: #000;
